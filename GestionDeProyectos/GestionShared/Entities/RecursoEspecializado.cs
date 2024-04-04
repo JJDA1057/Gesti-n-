@@ -32,7 +32,7 @@ namespace GestionShared.Entities
         [DataType(DataType.Date)]
         public DateTime FechaEntrega { get; set; }
 
-
+        public ICollection<Investigacion> Investigaciones { get; set; }
 
 
     }

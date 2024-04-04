@@ -30,5 +30,9 @@ namespace GestionShared.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         [DataType(DataType.Date)]
         public DateTime FechaFinalizacion { get; set; }
+
+        public ICollection<Investigador> InvestigadoresAsignados { get; set; }
+
+        public ICollection<RecursoEspe> RecursosEspecializados { get; set; }
     }
 }

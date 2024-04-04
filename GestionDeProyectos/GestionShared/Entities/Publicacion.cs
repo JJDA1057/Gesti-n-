@@ -27,6 +27,7 @@ namespace GestionShared.Entities
         [DataType(DataType.Date)]
         public DateTime FechaPublicacion { get; set; }
 
+        public Investigacion Investigacion { get; set; }
 
     }
 }

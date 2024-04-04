@@ -28,6 +28,9 @@ namespace GestionShared.Entities
         public string Afiliacion { get; set; }
 
 
+        public ICollection<Investigacion> InvestigacionesAsignadas { get; set; }
+
+
 
 
     }
