@@ -22,6 +22,9 @@ namespace GestionAPI.Data
 
         public DbSet<RecursoEspe> RecursosEspe { get; set; }
 
+        public DbSet<AsigRecursoEsp> AsigRecursosEsp { get; set; }
+
+        public DbSet<PartInvestigador> PartInvestigadores { get; set; }
 
 
 
