@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GestionShared.Entities
@@ -32,6 +33,7 @@ namespace GestionShared.Entities
         [DataType(DataType.Date)]
         public DateTime FechaEntrega { get; set; }
 
+        [JsonIgnore]
         public ICollection<Investigacion> Investigaciones { get; set; }
 
 

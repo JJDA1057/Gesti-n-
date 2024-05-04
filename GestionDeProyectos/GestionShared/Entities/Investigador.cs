@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GestionShared.Entities
@@ -27,9 +28,10 @@ namespace GestionShared.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string Afiliacion { get; set; }
 
-
+        [JsonIgnore]
         public ICollection<Investigacion> InvestigacionesAsignadas { get; set; }
 
+        
 
 
 
