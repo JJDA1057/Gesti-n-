@@ -1,0 +1,69 @@
+﻿@page "/investigaciones"
+@using GestionShared.Entities
+@using GestionWEB.Repositorios
+
+
+<h1>Proyectos de investigación.</h1>
+
+@inject IRepositorio Repositorio
+
+<div class="mb-3">
+
+    <a class="btn btn-primary"href="/investigaciones/create"></a>
+</div>
+
+<GenericList MyList="Investigaciones">
+
+    <Body>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Investigaciones!)
+                {
+                    <tr>
+                        <td>
+                                    <a href="/owners/edit/@item.Id" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square" /> Editar</a>
+                                    <button @onclick=@(() => DeleteAsync(item)) class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"/> Borrar</button>
+                        </td>
+                        
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Nombre
+                        </td>
+                        <td>
+                            @item.Descripcion
+                        </td>
+                        
+                            <td>
+                            @item.FechaInicio
+                        </td>
+                        <td>
+                            @item.FechaFinalizacion
+                            </td>
+                       
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </Body>
+</GenericList>
+    
+
+
+
+
+@code {
+    public IList<Investigacion>? Investigaciones { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        var responseHttp = await Repositorio.GetAsync<List<Investigacion>>("/api/investigacion");
+    }
+
+}
